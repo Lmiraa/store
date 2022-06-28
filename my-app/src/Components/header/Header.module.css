@@ -1,0 +1,130 @@
+.header{
+    width: 100%;
+    background-color: #fff;
+}
+.hederTop{
+    font-weight: 300;
+    font-size: 1.3rem;
+    line-height: 2.2;
+    letter-spacing: 0;
+    color: #777;
+    margin-bottom: .1rem;
+    box-sizing: border-box;
+}
+.header .container{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.headerTop .container {
+    position: relative;
+}
+.container {
+    padding-left: 10px;
+    padding-right: 10px;
+   
+}
+.container {
+    width: 1188px;
+    max-width: 100%;
+}
+.container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.headerCenter, .headerLft, .headerRight {
+    display: flex;
+    align-items: center;
+}
+.headerLeft i{
+    margin-right: 8px;
+    font-size: 14px;
+    color: #999;
+}
+.headerLeft p{
+    display: inherit;
+    color: #999;
+    font-size: 12px;
+}
+.headerLeft p:hover{
+    color: #c96;
+}
+.alignItemsCenter{
+    display: flex;
+    align-items: center!important;
+}
+.headerRight{
+    margin-left: auto;
+    align-self: stretch;
+}
+.socialIcons{
+    flex-flow: row wrap;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    margin-right: 2.3rem;
+}
+.socialIcons i{
+    margin-right: 1.5rem;
+}
+.socialIcons i {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #b6b9bc;
+    cursor: pointer;
+}
+.socialIcons i:hover{
+    color: #c96;
+}
+.headerRight span{
+    display: flex;
+    list-style: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #999;
+    cursor: pointer;
+    align-items: center;
+    cursor: pointer;
+}
+.headerRight span:hover{
+    color: #c96;
+}
+
+.headerTop ,.container:after{
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    bottom: -1px;
+    left: 10px;
+    right: 10px;
+    background-color: #ebebeb;
+}
+
+
+
+
+
+
+
+@media (max-width: 480px){
+    .socialIcons {
+        display: none;
+     }
+     
+ }
+@media (max-width: 991px){
+   .container {
+        padding: .5rem 1rem;
+    }
+    
+}
+@media screen and (min-width: 1280px){
+    .container {
+        max-width: 1200px;
+    }
+}
+
