@@ -1,8 +1,9 @@
-import React from 'react';
+import React,{useState} from 'react';
+import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //icons
-import {faPhone,faUser,faSearch,faShoppingCart} from '@fortawesome/free-solid-svg-icons';
+import {faPhone,faUser,faSearch,faShoppingCart,faLightbulb,faBars,faClose } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook,faInstagram,faTwitter,faPinterest} from "@fortawesome/free-brands-svg-icons"
 
 //Styles
@@ -11,7 +12,93 @@ import styles from "./Header.module.css";
 //Images
 import logo from "../../assetes/images/logo.png"
 
+const Ul=styled.div`
+display: flex;
+align-items: center;
+list-style: none;
+color: #fff;
+font-size: 1rem;
+font-weight: 200;
+cursor: pointer;
+li {
+    position: relative;
+    padding: 0 10px;
+    &:nth-child(1){
+        display:none;
+        justify-content: end;
+        font-size: 1.5rem;
+        padding: 20px 20px;
+        border:none;
+        transform:${(props)=>(props.open? 'translateX(0px)':'translateX(-100%);')};
+       }
+}
+form{
+    display: none;
+    input{
+        padding: 10px;
+        font-size: 13px;
+        border: 1px solid grey;
+        float: left;
+        width: 80%;
+        background: #333333;
+        border-right-width: 0;
+    }
+    button{
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #cc9966;
+    cursor: pointer;
+    }
+}
+@media (max-width: 580px){
+    form{
+        display:block;
+    }
+}
+@media(max-width:768px){
+    flex-direction: column;
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    left: 0px;
+    border: none;
+    top: 0;
+    background-color: #333;
+    transform:${(props)=>(props.open? 'translateX(0px)':'translateX(-100%);')};
+    transition: all 0.5s ease 0s;
+    margin: 0;
+    z-index: 1;
+    li{
+        width: 100%;
+        padding: 5px 20px;
+        box-sizing: border-box;
+        border-bottom: .1rem solid hsla(0,0%,100%,.08);
+        font-size: 0.9rem;
+        cursor: pointer;
+        &:nth-child(1){
+            display: flex;
+        
+             }
+             
+    }
+
+`
+
 const Header = () => {
+    const [open,setOpen] =useState(false)
+    const [fixe,setFixe] =useState(false)
+
+    function setFixed(){
+        if(window.scrollY>=500){
+            setFixe(true)
+        }else{
+            setFixe(false)
+        }
+    }
+    
+    window.addEventListener("scroll",setFixed);
+
     return (
         <header className={styles.header}>
 
@@ -43,7 +130,7 @@ const Header = () => {
         {/* headerMiddle */}
         <div className={styles.headerMiddle}>
             <div className={styles.container}>
-                {/* left */}
+                     {/* left */}
             <div className={styles.headerLeft} style={{flex: "1 1 auto"}}>
                 <form action="">
                     <button type="submit">
@@ -54,13 +141,13 @@ const Header = () => {
                    <input type="text" placeholder="Search product.." name="search"/>
                 </form>
             </div>
-            {/* center */}
+                    {/* center */}
             <div className={styles.headerCenter}>
                     <div className={styles.logo}>
                        <img src={logo} alt="logo"/>
                        </div>
                     </div>
-                    {/* Right */}
+                           {/* Right */}
                     <div className={styles.headerRight}>
                         <div className={styles.shoppingCart}>
                         <i>< FontAwesomeIcon icon={faShoppingCart}/></i>
@@ -70,6 +157,33 @@ const Header = () => {
             </div>
 
         </div>
+        {/*headerBottom */}
+        <div className={fixe? styles.fixe :styles.headerBottom}>
+                <div className={styles.container}>
+                    <div className={styles.headerLeft}>
+                        <div className={styles.mainNav}>
+                        <Ul className={styles.menu} open={open}>
+                        <li open={open} onClick={()=> setOpen(!open)}><FontAwesomeIcon icon={faClose}/></li>
+                        <form  style={{margin:"0 auto 20px",maxWidth:"300px"}}>
+                           <input type="text" placeholder="Search product.." name="search" />
+                            <button type="submit">
+                            <i style={{color:"#fff", fontSize:"1rem"}}> <FontAwesomeIcon icon={faSearch}/></i>
+                            </button>
+                         </form>
+                        <li>Home</li>  
+                        <li>Product</li>   
+                        <li>About us</li>   
+                        <li>Contact</li>
+                        </Ul> 
+                        </div>
+                        <i className={styles.bars}><FontAwesomeIcon icon={faBars} open={open} onClick={()=> setOpen(!open)}/></i> 
+                    </div>
+                    <div className={styles.headerRight }>
+                        <i >< FontAwesomeIcon icon={faLightbulb}/></i>
+                        <p className={styles.textWhite }>Clearance Up to 30% Off</p>
+                    </div>
+                </div>
+                </div>
         </header>
     );
 };

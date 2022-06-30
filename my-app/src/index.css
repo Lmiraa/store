@@ -25,6 +25,9 @@ input {
   font-size: 1rem;
   color: #333;
 }
+input::slotted{
+  border: none;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
