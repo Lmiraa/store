@@ -1,0 +1,77 @@
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+section{
+    padding: 60px 0;
+}
+.geBox{
+    display: flex;
+   justify-content: space-between;;
+}
+.geBox div{
+    position: relative;
+    width: 49%;
+    height: 250px;
+    cursor: pointer;
+}
+.geBox div img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+.geBox div img:hover{
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+}
+
+@media (max-width: 768px){
+    .geBox{
+        flex-direction: column;
+        align-items: center;
+    }
+    .geBox div{
+        width: 100%;
+        height: 300px;
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 480px){
+    .geBox div{
+        height: 155px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 576px){
+    .container {
+        max-width: 540px;
+    }
+    
+}
+
+@media (min-width: 768px){
+    .container {
+        max-width: 920px;
+    }
+    
+}
+@media (min-width: 992px){
+    .container {
+        max-width: 1180px;
+    }
+    
+}

@@ -7,6 +7,8 @@ import ProductGroup from './Components/Categorization/ProductGroup';
 import Footer from './Components/Footer';
 import Suggestions from './Components/Shared/Suggestions ';
 // import Test from './Components/Test';
+import Article from './Components/Article';
+import Guide from './Components/Guide';
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
       <ProductGroup/>
       <Suggestions/>
       {/* <Test/> */}
+      <Guide/>
+      <Article/>
      <Footer/>
       
     </>
