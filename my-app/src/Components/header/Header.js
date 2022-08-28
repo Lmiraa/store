@@ -2,6 +2,8 @@ import React,{useState} from 'react';
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { Link } from 'react-router-dom';
+
 //icons
 import {faPhone,faUser,faSearch,faShoppingCart,faLightbulb,faBars,faClose } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook,faInstagram,faTwitter,faPinterest} from "@fortawesome/free-brands-svg-icons"
@@ -118,10 +120,10 @@ const Header = () => {
                         <i>< FontAwesomeIcon icon={faTwitter}/></i>
                         <i>< FontAwesomeIcon icon={faPinterest}/></i>
                     </div>
-                    <span>
+                    <Link to="/SignUp">
                         <i style={{marginRight:"5px"}}>< FontAwesomeIcon icon={faUser} /></i>
                         Login
-                    </span>
+                    </Link>
                 </div>
             </div>
         </div>
@@ -170,7 +172,7 @@ const Header = () => {
                             <i style={{color:"#fff", fontSize:"1rem"}}> <FontAwesomeIcon icon={faSearch}/></i>
                             </button>
                          </form>
-                        <li>Home</li>  
+                        <li><Link to="/">Home</Link></li>  
                         <li>Product</li>   
                         <li>About us</li>   
                         <li>Contact</li>

@@ -52,6 +52,12 @@
 .headerLeft p:hover{
     color: #c96;
 }
+.headerLeft a{
+    color: #fff;
+}
+.headerLeft a:hover{
+    color: #c96;
+}
 .alignItemsCenter{
     display: flex;
     align-items: center!important;
@@ -77,6 +83,15 @@
     cursor: pointer;
 }
 .socialIcons i:hover{
+    color: #c96;
+}
+.headerRight a{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #b6b9bc;
+    cursor: pointer;
+}
+.headerRight a:hover{
     color: #c96;
 }
 .headerRight span{
@@ -161,7 +176,8 @@
     background-color: #c96;
 }
 .headerBottom{
-    background-color: #222;
+    background-color:#d7cbb2;
+    padding: 10px 0;
 }
 .headerBottom .headerRight p{
     font-size: 1rem;
@@ -188,7 +204,8 @@
     left: 0;
     right: 0;
     top: 0;
-    background: #000;
+    background: #d7cbb2;
+    padding: 10px 0;
     z-index: 1000;
     animation-name: fixedHeader;
     animation-duration: .4s;
