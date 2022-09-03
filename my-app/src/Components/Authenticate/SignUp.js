@@ -1,5 +1,8 @@
 import React,{useState,useEffect} from 'react';
+
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 //toast
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -34,10 +37,14 @@ const SignUp = () => {
     const focusHandler = event=>{
         setTouched({...touched,[event.target.name]: true})
     }
+    
+    const navigate = useNavigate();
+
     const submitHandler = event =>{
         event.preventDefault();
         if(!Object.keys(errors).length){
            notify("You signed is succes","success")
+           navigate('/',{replace:true});
         }else{
             notify("Invalide data!","error")
             setTouched({

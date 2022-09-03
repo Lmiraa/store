@@ -1,4 +1,6 @@
 import React,{useState,useEffect} from 'react';
+
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 //toast
@@ -28,10 +30,14 @@ const Login = () => {
     const focusHandler = event=>{
         setTouched({...touched,[event.target.name]: true})
     }
+    const navigate = useNavigate();
+    
     const submitHandler = event =>{
         event.preventDefault();
         if(!Object.keys(errors).length){
            notify("You Loged is succes","success")
+           navigate('/ ', {replace:true});
+          
         }else{
             notify("Invalide data!","error")
             setTouched({

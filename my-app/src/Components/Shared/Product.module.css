@@ -1,0 +1,92 @@
+.container{
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #d7cbb2;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    margin: 0 10px 50px;
+}
+.cardImage{
+    width: 230px;
+    height: 150px;
+    margin: 10px;
+}
+.container h3{
+    text-align: left;
+    color: #d88e35;
+    font-weight: bold;
+    margin: 25px 20px 15px;
+    font-size: 1.1rem;
+}
+.container p{
+    font-size: 0.9rem;
+    color: #d06550;
+    font-weight: bold;
+    text-align: left;
+    margin: 20px 15px;
+}
+.linkContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 20px 20px;
+}
+.linkContainer a{
+    text-decoration: none;
+    color: #d88e35;
+    font-size: 0.95rem;
+}
+.linkContainer button{
+    background-color: #d88e35;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+}
+.linkContainer button:hover{
+    background-color: #d06550;
+}
+.smallButtons{
+    width: 30px!important;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.counter{
+    display: inline-block;
+    width: 20px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #d06550;
+}
+
+@media(max-width:1000px){
+    .container{
+        width: 45%;
+    }
+
+}
+@media(max-width:768px){
+    .container{
+        width: 45%;
+    }
+    .cardImage{
+        width: 200px;
+    }
+}
+@media(max-width:555px){
+    .container{
+        width: 70%;
+    }
+    .cardImage{
+        width: 230px;
+    }
+}
+@media(max-width:400px){
+    .container{
+        width: 90%;
+    }
+}

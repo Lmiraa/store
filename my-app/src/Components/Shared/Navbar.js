@@ -1,15 +1,18 @@
-import React,{useState} from 'react';
+import React,{ useState,useContext } from 'react';
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Link } from 'react-router-dom';
+
+//context
+import { cartContext } from '../../context/CartContextProvider';
 
 //icons
 import {faPhone,faUser,faSearch,faShoppingCart,faLightbulb,faBars,faClose } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook,faInstagram,faTwitter,faPinterest} from "@fortawesome/free-brands-svg-icons"
 
 //Styles
-import styles from "./Header.module.css";
+import styles from "./Navbar.module.css";
 
 //Images
 import logo from "../../assetes/images/logo.png"
@@ -87,9 +90,11 @@ form{
 
 `
 
-const Header = () => {
+const Navbar = () => {
     const [open,setOpen] =useState(false)
     const [fixe,setFixe] =useState(false)
+
+    const {state}=useContext(cartContext);
 
     function setFixed(){
         if(window.scrollY>=500){
@@ -152,8 +157,8 @@ const Header = () => {
                            {/* Right */}
                     <div className={styles.headerRight}>
                         <div className={styles.shoppingCart}>
-                        <i>< FontAwesomeIcon icon={faShoppingCart}/></i>
-                        <span>0</span>
+                       <Link to = "/cart"><i>< FontAwesomeIcon icon={faShoppingCart}/></i></Link>
+                        <span>{state.itemsCounter}</span>
                         </div>
                     </div>
             </div>
@@ -173,7 +178,7 @@ const Header = () => {
                             </button>
                          </form>
                         <li><Link to="/">Home</Link></li>  
-                        <li>Product</li>   
+                        <li><Link to="/Products">Product</Link></li>   
                         <li>About us</li>   
                         <li>Contact</li>
                         </Ul> 
@@ -190,4 +195,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navbar;
